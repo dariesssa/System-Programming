@@ -1,0 +1,35 @@
+mkdir Work
+cd Work
+mkdir 'Лабораторная работа №1!'
+mkdir 'ФИО'
+
+chmod u=rwx,g=rwx,o=w 'Лабораторная работа №1!'
+chmod u=w 'ФИО'
+
+touch 'Text @1' 
+touch 'Text $2' 
+touch 'Text #3'
+
+echo "Птица говорун отличается умом и сообразительностью!" > 'Text @1'
+echo "Отличается умом, отличается сообразительностью..." >> 'Text @1'
+
+cp 'Text @1' 'Text $2'
+
+mv 'Text $2'  'Лабораторная работа №1!'/
+sudo cp 'Text @1' 'ФИО'/
+
+sudo gzip -k ФИО/'Text @1'
+sudo gzip -k 'Text #3'
+sudo tar -c -v -f MyAchiv.tar ФИО/'Text @1.gz' 'Text #3.gz'
+
+sudo head -n 1 ФИО/'Text @1' > 'Text #3' 
+echo "Будь осторожен! Преступник вооружен!" >> 'Text #3'
+sudo bash -c 'rev "ФИО/Text @1" > "ФИО/Result_one"'
+
+sudo mv ФИО/Result_one ФИО/Result_two
+
+touch 'Лабораторная работа №1!'/Result_3
+sudo bash -c 'zcat -f "ФИО"/T* > "Лабораторная работа №1!/Result_3"'
+
+sudo bash -c 'uname -a >> "Лабораторная работа №1!/Result_3"'
+sudo bash -c 'date >> "Лабораторная работа №1!/Result_3"'
